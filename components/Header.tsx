@@ -9,7 +9,7 @@ export default function Header() {
     <header>
       <div className="container">
         <div className="-mb-20 flex justify-center py-4">
-          <FizziLogo className="z-10 h-20 cursor-pointer text-[#129ac8]" />
+          <FizziLogo className="relative z-[100] h-20 cursor-pointer text-[#129ac8]" />
         </div>
       </div>
     </header>

@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  /* Брейкпоінти (вже є у вашому коді) */
-  --breakpoint-sm: "360px";
-  --breakpoint-md: "480px";
-  --breakpoint-lg: "768px";
-  --breakpoint-xl: "1280px";
+  --breakpoint-*: initial;
+  --breakpoint-sm: 22.5rem;
+  --breakpoint-md: 30rem;
+  --breakpoint-lg: 48rem;
+  --breakpoint-xl: 80rem;
 
   /* Шрифти */
   --font-sans: "var(--font-alpino)", sans-serif;
@@ -14,7 +14,6 @@
   --animate-slide-left: slide-left 3s linear infinite;
   --animate-spin-slow: spin 6s linear infinite;
 
-  /* Keyframes для анімацій */
   @keyframes slide-left {
     0% {
       transform: translateX(0);
@@ -36,6 +35,7 @@
 
 body {
   font-family: "Alpino", sans-serif;
+  color: #052f4a;
 }
 
 @utility container {
