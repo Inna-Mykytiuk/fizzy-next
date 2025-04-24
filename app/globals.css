@@ -1,9 +1,41 @@
 @import "tailwindcss";
 
 @theme {
-  --breakpoint-sm:
-    "360px", --breakpoint-md: "480px", --breakpoint-lg: "768px",
-    --breakpoint-xl: "1280px";
+  /* Брейкпоінти (вже є у вашому коді) */
+  --breakpoint-sm: "360px";
+  --breakpoint-md: "480px";
+  --breakpoint-lg: "768px";
+  --breakpoint-xl: "1280px";
+
+  /* Шрифти */
+  --font-sans: "var(--font-alpino)", sans-serif;
+
+  /* Анімації */
+  --animate-slide-left: slide-left 3s linear infinite;
+  --animate-spin-slow: spin 6s linear infinite;
+
+  /* Keyframes для анімацій */
+  @keyframes slide-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+body {
+  font-family: "Alpino", sans-serif;
 }
 
 @utility container {
