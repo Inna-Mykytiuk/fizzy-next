@@ -10,6 +10,7 @@ import React from "react";
 
 import cans from "../public/all-cans-bunched.png";
 import { Bounded } from "./Bounded";
+import { Bubbles } from "./Bubbles";
 import Button from "./Button";
 import Scene from "./Scene";
 
@@ -87,6 +88,7 @@ const Hero = () => {
     <Bounded className="hero opacity-0">
       <View className="hero-scene pointer-events-none sticky top-0 z-50 -mt-[100vh] hidden h-screen w-screen md:block">
         <Scene />
+        <Bubbles count={300} speed={2} repeat={true} />
       </View>
       <div className="grid">
         <section className="hero flex h-screen flex-col items-center justify-center text-center">
@@ -97,7 +99,7 @@ const Hero = () => {
               className="hero-header-word"
             />
           </h1>
-          <p className="hero-subheading mt-12 mb-4 text-5xl font-semibold text-[#129ac8] lg:text-6xl">
+          <p className="hero-subheading mt-12 mb-4 text-5xl font-semibold text-[#fea9cb] lg:text-6xl">
             Soda perfect
           </p>
           <span className="hero-body text-2xl font-normal text-sky-950">
