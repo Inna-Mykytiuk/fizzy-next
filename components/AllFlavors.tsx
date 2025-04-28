@@ -6,7 +6,7 @@ import cans from "../public/all-cans-bunched.png";
 
 const AllFlavors = () => {
   return (
-    <section className="text-side relative z-[80] container grid h-screen items-center gap-4 lg:grid-cols-2">
+    <section className="text-side relative z-[80] grid h-screen items-center gap-4 lg:grid-cols-2">
       <Image
         src={cans}
         alt="Cans"

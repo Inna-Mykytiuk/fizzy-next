@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 
+import ViewCanvas from "../components/ViewCanvas";
 import "./globals.css";
 
 const alpino = localFont({
@@ -27,7 +28,10 @@ export default function RootLayout({
         className={`${alpino.variable} h-screen overflow-x-hidden bg-[#d2f4fb]`}
       >
         <Header />
-        <main>{children}</main>
+        <main>
+          {children}
+          <ViewCanvas />
+        </main>
       </body>
     </html>
   );

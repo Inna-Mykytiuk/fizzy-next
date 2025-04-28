@@ -2,13 +2,16 @@
 
 import { TextSplitter } from "@/utils/TextSplitter";
 import { useGSAP } from "@gsap/react";
+import { View } from "@react-three/drei";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import React from "react";
 
 import cans from "../public/all-cans-bunched.png";
+import { Bounded } from "./Bounded";
 import Button from "./Button";
+import Scene from "./Scene";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -49,7 +52,7 @@ const Hero = () => {
         start: "top top",
         end: "bottom bottom",
         scrub: 1.5,
-        markers: true,
+        // markers: true,
       },
     });
 
@@ -81,7 +84,10 @@ const Hero = () => {
   });
 
   return (
-    <div className="hero opacity-0">
+    <Bounded className="hero opacity-0">
+      <View className="hero-scene pointer-events-none sticky top-0 z-50 -mt-[100vh] hidden h-screen w-screen md:block">
+        <Scene />
+      </View>
       <div className="grid">
         <section className="hero flex h-screen flex-col items-center justify-center text-center">
           <h1 className="hero-header text-7xl leading-[.8] font-black text-orange-500 uppercase md:text-[9rem] lg:text-[13rem]">
@@ -104,7 +110,7 @@ const Hero = () => {
           />
         </section>
 
-        <section className="text-side relative z-[80] container grid h-screen items-center gap-4 lg:grid-cols-2">
+        <section className="text-side relative z-[80] grid h-screen items-center gap-4 lg:grid-cols-2">
           <Image
             src={cans}
             alt="Cans"
@@ -114,7 +120,7 @@ const Hero = () => {
           />
           <div className="text-side-heading">
             <TextSplitter
-              text="Try All Flavors"
+              text="Try All Five Flavors"
               className="text-6xl font-bold text-balance uppercase lg:text-8xl"
             />
             <p className="text-side-body mt-4 max-w-xl text-xl font-normal text-balance">
@@ -125,7 +131,7 @@ const Hero = () => {
           </div>
         </section>
       </div>
-    </div>
+    </Bounded>
   );
 };
 
