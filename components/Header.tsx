@@ -1,6 +1,6 @@
 import React from "react";
 
-import { FizziLogo } from "./FizziLogo";
+import { FizziLogo } from "./UI/FizziLogo";
 
 export default function Header() {
   return (

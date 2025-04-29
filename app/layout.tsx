@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${alpino.variable} h-screen overflow-x-hidden bg-[#d2f4fb]`}
+        className={`${alpino.variable} h-screen overflow-x-hidden bg-[#b2e1f6]`}
       >
         <Header />
         <main>

@@ -6,15 +6,14 @@ import gsap from "gsap";
 import React, { ReactElement, useRef } from "react";
 import { Group } from "three";
 
-import FloatingCan from "./FloatingCan";
+import { useStore } from "../../hooks/useStore";
+import FloatingCan from "../FloatingCan";
 
 gsap.registerPlugin(useGSAP);
 
-// interface Props {
+export default function HeroScene(): ReactElement {
+  const isReady = useStore((state) => state.isReady);
 
-// }
-
-export default function Scene(): ReactElement {
   const can1Ref = useRef<Group>(null);
   const can2Ref = useRef<Group>(null);
   const can3Ref = useRef<Group>(null);
@@ -40,6 +39,8 @@ export default function Scene(): ReactElement {
       !groupRef.current
     )
       return;
+
+    isReady();
 
     //Set can starting position
     gsap.set(can1Ref.current.position, { x: -1.5 });
@@ -134,7 +135,7 @@ export default function Scene(): ReactElement {
       />
       <FloatingCan ref={can5Ref} flavor="lemonLime" floatSpeed={FLOAT_SPEED} />
       {/* <OrbitControls /> */}
-      <Environment files="/hdr/field.hdr" environmentIntensity={1.0} />
+      <Environment files="/hdr/field.hdr" environmentIntensity={1.5} />
     </group>
   );
 }
